@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import reactLogo from '../assets/react.svg'
 import '../App.css'
 import MainLayout from '../layouts/MainLayout';
 
 const Home = () => {
+    const [joinMeeting, setJoinMeeting] = useState<string>('');
+
     return (
         <>
         <MainLayout>
@@ -23,16 +26,18 @@ const Home = () => {
             
             <div className=''>
                 <input type="text" 
-                name="text" 
-                className=" mt-1 px-3 py-2 bg-slate-700  border shadow-sm border-slate-700 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-full sm:text-sm focus:ring-1" placeholder="Add room id" />
+                    name="text" 
+                    className="dark:text-white mt-1 px-3 py-2 bg-slate-700  border shadow-sm border-slate-700 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-full sm:text-sm focus:ring-1" 
+                    placeholder="Add room id"
+                    onChange={(e) => setJoinMeeting(e.target.value)} />
                 
                 <div className=" flex justify-center my-5">
-                <button className="btn-primary me-4">
-                    Join meeting
-                </button>
-                <button className="btn-primary">
-                    Create new meeting
-                </button>
+                    <Link to={joinMeeting} className="btn-primary me-4">
+                        Join meeting
+                    </Link>
+                    <Link to="/new" className="btn-primary">
+                        Create new meeting
+                    </Link>
                 </div>
             </div>
 
