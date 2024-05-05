@@ -8,6 +8,7 @@ import {
 import Home from './pages/Home';
 import MainLayout from './layouts/MainLayout';
 import reactLogo from '../src/assets/react.svg';
+import Room from './pages/Room';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
+          <Route path='/:id' element={<Room />} />
           <Route path='*' element={<NoMatch />} />
         </Routes>
       </BrowserRouter>
