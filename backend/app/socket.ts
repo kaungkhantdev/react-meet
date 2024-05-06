@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     /** Replace with your allowed origin */ 
-    origin: 'http://localhost:3000', 
+    origin: 'http://localhost:5173', 
     methods: ['GET', 'POST']
   }
 })
@@ -16,6 +16,7 @@ const io = new Server(server, {
 
 io.on('connection', (socket) => {
     console.log("server is connected")
+    console.log("client id", socket.id)
 
     socket.on('join-room', (roomId, userId) => {
         console.log(`a new user ${userId} joined room ${roomId}`)

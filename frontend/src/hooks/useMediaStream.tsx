@@ -1,13 +1,13 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 
 const useMediaStream = () => {
     const [state, setState] = useState<MediaStream | null>(null)
     const [error, setError] = useState<Error | null>(null);
-    // const isStreamSet = useRef(false)
+    const isStreamSet = useRef(false)
 
     useEffect(() => {
-        // if (isStreamSet.current) return;
-        // isStreamSet.current = true;
+        if (isStreamSet.current) return;
+        isStreamSet.current = true;
         (async function initStream() {
             try {
                 const stream = await navigator.mediaDevices.getUserMedia({
