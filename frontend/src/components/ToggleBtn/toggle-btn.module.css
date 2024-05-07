@@ -1,0 +1,13 @@
+.Active {
+    @apply  bg-sky-500 hover:bg-sky-700 px-5 py-2 text-sm leading-5 rounded-full font-semibold text-white;
+}
+
+.unActive {
+    @apply  bg-red-500 hover:bg-red-700 px-5 py-2 text-sm leading-5 rounded-full font-semibold text-white;
+}
+
+.toggleBtn {
+    @apply space-x-2 md:space-x-5 fixed bottom-20;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
