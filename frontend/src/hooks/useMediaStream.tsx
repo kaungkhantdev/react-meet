@@ -1,7 +1,7 @@
 import {useState, useEffect, useRef} from 'react'
 
 const useMediaStream = () => {
-    const [state, setState] = useState<MediaStream | null>(null)
+    const [state, setState] = useState<MediaStream>()
     const [error, setError] = useState<Error | null>(null);
     const isStreamSet = useRef(false)
 

@@ -1,7 +1,5 @@
 import ReactPlayer from 'react-player';
-import cx from 'classnames';
-import styles from './index.module.css';
-import { LoadingIcon } from '../icons';
+import {  UserIcon } from '../icons';
 
 
 const Player = (
@@ -16,8 +14,8 @@ const Player = (
 
     return (
         <>
-        <div className={cx(styles.playerContainer)}>
-            {url && (
+        <div>
+            {url && playing ? 
                 <ReactPlayer
                     url={url}
                     muted={muted}
@@ -25,15 +23,11 @@ const Player = (
                     width="100%"
                     height="100%"
                 />
-            )}
-            {!url && (
-                <div className='text-center py-40'>
-                    <div className=' flex justify-center my-4'>
-                        <LoadingIcon w={40} h={40} className=' animate-spin '/>
-                    </div>
-                    <p className=' text-white '>No media stream available or Loading.</p>
+                :
+                <div className=' px-36 '>
+                    <UserIcon w={120} h={120} />
                 </div>
-            )}
+            }
         </div>
         </>
     )

@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { FormEvent, useState } from 'react';
+import { v4 as uuidV4 } from 'uuid';
+import { Link, useNavigate } from 'react-router-dom';
 import reactLogo from '../assets/react.svg'
 import '../App.css'
 import MainLayout from '../layouts/MainLayout';
 
 const Home = () => {
+    const navigate = useNavigate();
     const [joinMeeting, setJoinMeeting] = useState<string>('');
+
+    const createNewMeet = (e: FormEvent) => {
+        e.preventDefault();
+        const roomId = uuidV4();
+        navigate('/'+roomId)
+    }
 
     return (
         <>
         <MainLayout>
 
-        <div className='container mx-auto py-40'>
+        <div className='container mx-auto'>
 
         <div className=' flex justify-center'>
             <a href="https://react.dev" target="_blank">
@@ -35,9 +43,9 @@ const Home = () => {
                     <Link to={joinMeeting} className="btn-primary me-4">
                         Join meeting
                     </Link>
-                    <Link to="/new" className="btn-primary">
+                    <button onClick={createNewMeet} className="btn-primary">
                         Create new meeting
-                    </Link>
+                    </button>
                 </div>
             </div>
 
