@@ -159,7 +159,7 @@ const Room = () => {
         <>
         <MainLayout>
             
-        {!loading && error &&  ( <ERRMsg msg={error.message} />)}
+        { !loading && error &&  ( <ERRMsg msg={error.message} />)}
         { loading && <Loading />}
         { !loading && !error && 
 
@@ -170,7 +170,7 @@ const Room = () => {
                         url={playerHighlighted.url}
                         muted={playerHighlighted.muted}
                         playing={playerHighlighted.playing}
-                        // isActive
+                        isActive
                     />
 
                 )}
@@ -185,7 +185,7 @@ const Room = () => {
                                 url={url}
                                 muted={muted}
                                 playing={playing}
-                                // isActive={false}
+                                isActive={false}
                             />
                         );
                     })

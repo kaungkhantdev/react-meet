@@ -7,10 +7,11 @@ const Player = (
     { 
         url?: MediaStream | null, 
         muted?: boolean | undefined, 
-        playing?: boolean | undefined
+        playing?: boolean | undefined,
+        isActive: boolean,
     }
 ) => {
-    const { url, muted, playing } = props;
+    const { url, muted, playing, isActive } = props;
 
     return (
         <>
@@ -24,8 +25,8 @@ const Player = (
                     height="100%"
                 />
                 :
-                <div className=' px-36 '>
-                    <UserIcon w={120} h={120} />
+                <div className={`flex items-center justify-center dark:bg-slate-700 ${isActive ? ' p-10 rounded-lg  ' : 'lg:p-32 rounded-lg'}`}>
+                    <UserIcon w={ isActive ? 40:60} h={ isActive ? 40:60} />
                 </div>
             }
         </div>
