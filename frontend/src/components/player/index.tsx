@@ -15,7 +15,7 @@ const Player = (
 
     return (
         <>
-        <div>
+        <div className='flex justify-end'>
             {url && playing ? 
                 <ReactPlayer
                     url={url}
@@ -25,7 +25,7 @@ const Player = (
                     height="100%"
                 />
                 :
-                <div className={`flex items-center justify-center dark:bg-slate-700 ${isActive ? ' p-10 rounded-lg  ' : 'lg:p-32 rounded-lg'}`}>
+                <div className={` inline-block dark:bg-slate-700 ${isActive ? ' p-10 rounded-lg  ' : 'flex items-center justify-center p-10 lg:p-32 rounded-lg'}`}>
                     <UserIcon w={ isActive ? 40:60} h={ isActive ? 40:60} />
                 </div>
             }
