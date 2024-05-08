@@ -1,6 +1,6 @@
 # React Meet
 
-React meet is a minimal meeting with WebRTC and websocket.
+React meet is a minimal meeting with WebRTC and websocket. If you like it please give star.
 
 
 ## Tech Stack
@@ -46,10 +46,16 @@ To edit frontend
   cd react-meet/frontend
 
   cp .env.example .env
+```
+
+
+Edit .env frontend
+
+```bash
+  VITE_SOCKET_URL=`your-backend-url`
 
   npm run dev
 ```
-
 
 
 ## Authors
