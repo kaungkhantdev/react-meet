@@ -20,7 +20,7 @@ const ToggleBtn = (props:
                 <button onClick={toggleVideo} className={ playing ? styles.Active : styles.unActive }>
                     { playing ? <VideoOnIcon /> : <VideoOffIcon /> }
                 </button>
-                <button onClick={leaveRoom} className={ styles.Active }>
+                <button onClick={leaveRoom} className={ styles.unActive }>
                     <LeaveIcon />
                 </button>
             </div>
