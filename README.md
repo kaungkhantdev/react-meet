@@ -58,6 +58,19 @@ Edit .env frontend
 ```
 
 
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run build
+```
+
+Start the server
+
+```bash
+  npm run start
+```
 ## Authors
 
 - [@kaungkhantzawdev](https://www.github.com/kaungkhantzawdev)
