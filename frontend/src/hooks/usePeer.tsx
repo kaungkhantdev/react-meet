@@ -18,7 +18,7 @@ const usePeer = () => {
         let myPeer: Peer;
         (
             async function initPeer() {
-                myPeer = new (await import('peerjs')).default();
+                myPeer = new Peer();
                 setPeer(myPeer)
 
                 myPeer.on('open', (id) => {
