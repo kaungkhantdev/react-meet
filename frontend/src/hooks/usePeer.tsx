@@ -1,5 +1,5 @@
 import Peer from "peerjs"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useSocket } from "../context/socket"
 import { useParams } from "react-router-dom"
 
@@ -9,14 +9,16 @@ const usePeer = () => {
     const { roomId } = useParams();
     const [peer, setPeer] = useState<Peer | null>(null)
     const [myId, setMyId] = useState<string | null >(null)
-
+    const isPeerSet = useRef(false)
+    
     useEffect(() => {
-        if(!roomId || !socket ) return;
+        if (isPeerSet.current || !roomId || !socket) return;
+        isPeerSet.current = true;
 
         let myPeer: Peer;
         (
             async function initPeer() {
-                myPeer = new Peer();
+                myPeer = new (await import('peerjs')).default();
                 setPeer(myPeer)
 
                 myPeer.on('open', (id) => {
