@@ -16,7 +16,11 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
 
     useEffect(() => {
         console.log('url', socketUrl)
-        const connection = io(socketUrl);
+        const connection = io(socketUrl,  {
+            path: '/socket.io',
+            transports: ['websocket'],
+            secure: true,
+        });
         console.log('socket connection', connection )
 
         setSocket(connection);
