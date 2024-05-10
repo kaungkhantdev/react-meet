@@ -90,3 +90,13 @@ export const CopyIcon = ({ w = 24, h = 24, className } : { w?: number, h?: numbe
         </>
     )
 }
+
+export const CloseIcon = ({ w = 24, h = 24, className } : { w?: number, h?: number, className?: string }) => {
+    return (
+        <>
+        <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" width={w} height={h} color="#000000" fill="none">
+            <path d="M19.0005 4.99988L5.00045 18.9999M5.00045 4.99988L19.0005 18.9999" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+        </>
+    )
+}
