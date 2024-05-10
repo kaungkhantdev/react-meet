@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CopyIcon, LoadingIcon } from '../icons';
+import { CloseIcon, CopyIcon, LoadingIcon } from '../icons';
 
 export const Loading = () => {
     return (
@@ -39,10 +39,13 @@ export const NoOneMsg = () => {
 }
 
 
-export const CopyId = ({id}: {id: string | undefined}) => {
+export const CopyId = ({id, setClose}: {id: string | undefined, setClose: React.Dispatch<React.SetStateAction<boolean>> }) => {
     return (
         <div className='dark:bg-slate-700 rounded-lg py-3 px-6'>
-           <div className='my-4 flex items-center'>
+            <button onClick={() => setClose((pre) => !pre)}>
+                <CloseIcon className='text-white' />
+            </button>
+            <div className='my-4 flex items-center'>
                 <span className='text-white me-5'>Meet Link</span>
                 <button onClick={() =>  navigator.clipboard.writeText(window.location.href)}>
                     <CopyIcon className=' cursor-pointer'/>

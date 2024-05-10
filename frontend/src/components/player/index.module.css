@@ -1,3 +1,11 @@
 .playerContainer {
     @apply relative overflow-hidden mb-5 h-full;
 }
+
+.marginLeft20 {
+    margin-left: 20px;
+}
+
+video {
+    max-height: 500px;
+}
