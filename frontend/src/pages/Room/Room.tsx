@@ -18,6 +18,7 @@ type UserConnections = {
 const Room = () => {
     const socket = useSocket();
     const { roomId } = useParams();
+    const [close, setClose] = useState<boolean>(true);
     const { stream, error } = useMediaStream();
     const { peer, myId, loading, setLoading } = usePeer();
     const [ users, setUsers] = useState<UserConnections>({})
@@ -202,9 +203,12 @@ const Room = () => {
                     leaveRoom={leaveRoom}
                     toggleAudio={toggleAudio} />
             }
-            <div className=' fixed top-10 left-10'>
-                <CopyId id={roomId} />
-            </div>
+            {
+                close &&
+                <div className=' fixed top-10 left-10'>
+                    <CopyId id={roomId} setClose={setClose} />
+                </div>
+            }
         </div>
         }
         </MainLayout>
