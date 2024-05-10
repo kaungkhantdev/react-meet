@@ -1,6 +1,6 @@
 import ReactPlayer from 'react-player';
 import {  UserIcon } from '../icons';
-
+import styles from './index.module.css';
 
 const Player = (
     props : 
@@ -23,6 +23,8 @@ const Player = (
                     playing={playing}
                     width="100%"
                     height="100%"
+                    className={`lg:m-0 ${isActive ? styles.marginLeft20 : ''}`}
+                    style={{ maxHeight: "500px"}}
                 />
                 :
                 <div className={` inline-block dark:bg-slate-700 ${isActive ? ' p-10 rounded-lg  ' : 'flex items-center justify-center p-10 lg:p-32 rounded-lg'}`}>
