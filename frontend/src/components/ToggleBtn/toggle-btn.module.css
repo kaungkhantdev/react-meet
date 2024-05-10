@@ -7,7 +7,8 @@
 }
 
 .toggleBtn {
-    @apply space-x-2 md:space-x-5 fixed bottom-20;
+    @apply space-x-2 md:space-x-5 fixed bottom-20 flex items-center justify-center;
+    width: 300px;
     left: 50%;
     transform: translate(-50%, -50%);
 }

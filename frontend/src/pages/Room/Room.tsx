@@ -38,12 +38,12 @@ const Room = () => {
 
          /** HANDLE USER CONNECT */
         const handleUserConnect = (newUser: string) => {
-            // console.log(`user connected in room with userId ${newUser}`);
+            console.log(`user connected in room with userId ${newUser}`);
 
             const call = peer?.call(newUser, stream);
             
             call?.on('stream', (incomingStream) => {
-                // console.log(`incoming stream from ${newUser}`);
+                console.log(`incoming stream from ${newUser}`);
                     setPlayers((prev) => ({
                     ...prev,
                     [newUser]: {
@@ -76,7 +76,7 @@ const Room = () => {
           call.answer(stream);
     
           call.on("stream", (incomingStream) => {
-            // console.log(`incoming stream from ${callerId}`);
+            console.log(`incoming stream from ${callerId}`);
             setPlayers((prev) => ({
               ...prev,
               [callerId]: {
@@ -175,7 +175,7 @@ const Room = () => {
 
                 )}
             </div>
-            <div className=' flex items-center justify-center space-x-2 space-y-2'>
+            <div className=' flex-wrap flex items-center justify-center space-x-2 space-y-2'>
             
                 {   Object.keys(nonHighlightedPlayers).map((playerId) => {
                         const { url, muted, playing } = nonHighlightedPlayers[playerId];
